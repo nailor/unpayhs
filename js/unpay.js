@@ -1,5 +1,3 @@
 "use strict";
 
-(function() {
-    localStorage.removeItem('_hs_hist');
-})();
+setInterval(function() {localStorage.removeItem('_hs_hist')}, 2000);
