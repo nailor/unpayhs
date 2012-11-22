@@ -1,12 +1,8 @@
 "use strict";
 
 (function() {
-    var target = document.querySelector('#article-main-alternative'),
-        paywall = document.querySelectorAll('div.paywall, .paywall-content'),
-        forEach = Array.prototype.forEach;
-    target.style.display = 'block';
+    // The paywall activation script blows up if it can't read
+    // _hs_hist in localStorage.
 
-    forEach.call(paywall, function(element) {
-        element.style.display = 'none';
-    });
+    window.localStorage.setItem('_hs_hist', 'garbage][');
 })();
