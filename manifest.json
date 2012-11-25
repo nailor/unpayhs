@@ -1,6 +1,6 @@
 {
   "name": "Un-Pay HS",
-  "version": "0.2",
+  "version": "0.3",
   "manifest_version": 2,
   "description": "Remove paywall block from hs.fi",
   "content_scripts": [{
