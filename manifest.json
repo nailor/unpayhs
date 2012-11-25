@@ -5,7 +5,8 @@
   "description": "Remove paywall block from hs.fi",
   "content_scripts": [{
     "matches": ["*://*.hs.fi/*", "*://hs.fi/*"],
-    "js": ["js/unpay.js"],
+    "js": ["js/inject.js"],
     "run_at": "document_start"
-  }]
+  }],
+  "web_accessible_resources": ["js/unpay.js"]
 }
