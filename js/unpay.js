@@ -39,4 +39,16 @@
             get: function() { return real_hs; }
         });
     }
+
+    // Handle the annoying full-screen ads
+    document.addEventListener("DOMContentLoaded", function load() {
+        var fullscreen_ad = document.getElementsByClassName(
+            "close-frontpage-ad frontpage-ad-link");
+        if (fullscreen_ad.length === 0) {
+            console.log("No full screen ad, yay");
+            return;
+        }
+        var link = fullscreen_ad[0];
+        link.click();
+    }, false);
 })();
