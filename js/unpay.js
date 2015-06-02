@@ -10,14 +10,20 @@
         paywall_instance.onArticleRead = function () {};
     };
 
+    function set_paywall(value) {
+        real_paywall = value;
+        Object.defineProperty(real_paywall, 'instance', {
+            set: set_paywall_instance,
+            get: function() { return paywall_instance; }
+        });
+    }
+
     function define_pw_property(obj) {
+        if(obj.paywall) {
+            set_paywall(obj.paywall)
+        }
         Object.defineProperty(obj, 'paywall', {
-            set: function(value) {
-                real_paywall = value;
-                Object.defineProperty(real_paywall, 'instance', {
-                    set: set_paywall_instance,
-                    get: function() { return paywall_instance; }});
-            },
+            set: set_paywall,
             get: function() {
                 return real_paywall;
             },
